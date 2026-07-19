@@ -75,7 +75,7 @@ body {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 2;
+  z-index: 3;
 }
 
 .card {

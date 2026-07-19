@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const card2 = document.querySelector('.card-2');
   const card3 = document.querySelector('.card-3');
   const card4 = document.querySelector('.card-4');
+  const bgVideo = document.querySelector('.bg-video');
+  const bgImage = document.querySelector('.bg-image');
 
   gsap.set([card1, card2, card3, card4], { y: viewportHeight });
 
@@ -32,5 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const card4Scroll = scrollTop - stageHeight * 3;
     const card4Progress = Math.max(0, Math.min(card4Scroll / stageHeight, 1));
     gsap.set(card4, { y: viewportHeight * (1 - card4Progress) + stackGap * 3 });
+
+    const parallaxVideo = -scrollTop * 0.3;
+    bgVideo.style.transform = `translateY(${parallaxVideo}px)`;
+
+    const parallaxImage = -scrollTop * 0.6;
+    bgImage.style.transform = `translateY(${parallaxImage}px)`;
   });
 });
